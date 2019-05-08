@@ -1,11 +1,10 @@
 package com.sss.wc.controllers;
 
-
-
 import com.sss.wc.controllers.util.JsfUtil;
 import com.sss.wc.controllers.util.JsfUtil.PersistAction;
 import com.sss.wc.entity.Item;
 import com.sss.wc.enums.ItemType;
+import com.sss.wc.enums.PositionType;
 import com.sss.wc.facades.ItemFacade;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -32,15 +31,15 @@ public class ItemController implements Serializable {
     private List<Item> items = null;
     private Item selected;
 
-    public Item findItem(String name,ItemType type){
+    public Item findItem(String name, ItemType type) {
         String jpql;
         Map m = new HashMap();
         jpql = "select i from Item i where lower(i.name) = :n and i.itemCategory = :cat";
         m.put("n", name.toLowerCase());
         m.put("cat", type);
         Item ti = getFacade().findFirstBySQL(jpql, m);
-        if(ti==null){
-            ti=new Item();
+        if (ti == null) {
+            ti = new Item();
             ti.setName(name);
             ti.setItemCategory(type);
             getFacade().create(ti);
@@ -48,8 +47,7 @@ public class ItemController implements Serializable {
         return ti;
     }
 
-
-    public List<Item> findItems(String name,ItemType type){
+    public List<Item> findItems(String name, ItemType type) {
         String jpql;
         Map m = new HashMap();
         jpql = "select i from Item i where lower(i.name) like :n and i.itemCategory = :cat";
@@ -58,12 +56,10 @@ public class ItemController implements Serializable {
         return getFacade().findBySQL(jpql, m);
     }
 
-    public List<Item> completeDesignations(String name){
+    public List<Item> completeDesignations(String name) {
         return findItems(name, ItemType.Designation);
     }
-    
-    
-    
+
     public ItemController() {
     }
 
@@ -91,7 +87,47 @@ public class ItemController implements Serializable {
         return selected;
     }
 
+    public Item findOrCreateItem(ItemType it, PositionType pt) {
+        String j = "select i from Item i ";
+        Map m = new HashMap();
+        if (it != null && pt != null) {
+            j += " where i.itemCategory=:cat and i.positionType=:pt ";
+            m.put("Cat", it);
+            m.put("pt", pt);
+        } else if (it != null) {
+            j += " where i.itemCategory=:cat and i.positionType=:pt ";
+            m.put("Cat", it);
+            m.put("pt", pt);
+        } else if (pt != null) {
+            j += " where i.itemCategory=:cat and i.positionType=:pt ";
+            m.put("Cat", it);
+            m.put("pt", pt);
+        } else {
+            return new Item();
+        }
+        Item ti = getFacade().findFirstBySQL(j, m);
+        if(ti==null){
+            ti = new Item();
+        }
+        return ti;
+    }
+
     public void create() {
+        if (selected == null) {
+            JsfUtil.addErrorMessage("Nothing to save");
+            return;
+        }
+        if (selected.getItemCategory() == ItemType.Position) {
+            String j = "Select i from Item i where i.itemCategory=:cat and i.positionType=:pt";
+            Map m = new HashMap();
+            m.put("cat", ItemType.Position);
+            m.put("pt", selected.getPositionType());
+            Item ti = getFacade().findFirstBySQL(j, m);
+            if (ti != null) {
+                JsfUtil.addErrorMessage("This Position is already added");
+                return;
+            }
+        }
         persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle1").getString("ItemCreated"));
         if (!JsfUtil.isValidationFailed()) {
             items = null;    // Invalidate list of items to trigger re-query.

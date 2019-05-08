@@ -28,102 +28,71 @@
 
                             <p:panelGrid columns="2" rendered="#{employeeController.selected ne null}" >
 
-                                <p:outputLabel value="Name:" for="nameOfPatient" />
-                                <p:inputText required="true" id="nameOfPatient"
-                                             style="width: 300px;" 
-                                             value="#{employeeController.selected.nameOfEmployee}" title="Name with initials" />
 
-
-                                <p:outputLabel value="Full Name:" for="fullName" />
+                                <p:outputLabel value="01 Full Name:" for="fullName" />
                                 <p:inputTextarea required="true" id="fullName"
                                                  style="width: 300px;"
                                                  value="#{employeeController.selected.fullName}" 
-                                                 title="Name denoted by initials" />
+                                                 title="Fulll Name" />
 
-                                <p:outputLabel value="Institute:" />
-                                <p:autoComplete value="#{employeeController.selected.institute}" 
-                                                completeMethod="#{instituteController.completeInstitutes}" var="i" itemLabel="#{i.name}" itemValue="#{i}" >
-                                </p:autoComplete>
 
-                                <p:outputLabel value="Position:" for="designation" />
-                                <p:autoComplete id="designation" value="#{employeeController.selected.designation}"
-                                                completeMethod="#{itemController.completeDesignations}"
-                                                var="d" itemLabel="#{d.name}"
-                                                itemValue="#{d}">
-                                </p:autoComplete>
+                                <p:outputLabel value="02 Name with Initials:" for="nameOfPatient" />
+                                <p:inputText required="true" id="nameOfPatient"
+                                             style="width: 300px;" 
+                                             value="#{employeeController.selected.nameOfEmployee}" title="Name" />
 
-                                <p:outputLabel value="Gender:" for="gender" />
-                                <p:selectOneButton id="gender" value="#{employeeController.selected.gender}"  label="Gender" >
-                                    <f:selectItems value="#{enumController.genders}" ></f:selectItems>
-                                </p:selectOneButton>
 
-                                <p:outputLabel value="NIC:" for="nic" />
+
+                                <p:outputLabel value="03 NIC:" for="nic" />
                                 <p:inputText id="nic" value="#{employeeController.selected.nic}" title="ClinicNumber" />
 
-                                <p:outputLabel value="Appointment Date:" />
-                                <p:calendar pattern="dd MMMM yyyy" navigator="true" id="dateOfFirstAppointment" value="#{employeeController.selected.dateOfFirstAppointment}" title="DateOfFirstAppointment" >
-                                </p:calendar>
 
+                                <p:outputLabel value="04 Address" ></p:outputLabel>
+                                <hr/>
+                                
+                                <p:outputLabel value="Residential Address:" for="address" />
+                                <p:inputTextarea rows="4" cols="30" id="address" value="#{employeeController.selected.address}" title="Residential Address" />
 
-                                <p:outputLabel value="Number of appointment letter "  />
-                                <p:inputText required="true" 
-                                             style="width: 300px;" 
-                                             value="#{employeeController.selected.letterOfFirstAppointment}" title="Number of appointment letter" />
+                                
+                                <p:outputLabel value="Official Address:" for="oaddress" />
+                                <p:inputTextarea rows="4" cols="30" id="oaddress" value="#{employeeController.selected.officialAddress}" title="Official Address" />
 
-                                <p:outputLabel value="Date of appointment letter "  />
-                                <p:calendar pattern="dd MMMM yyyy" navigator="true" id="dateOfFirstAppointmentLetter" value="#{employeeController.selected.letterDateOfFirstAppointment}" title="Date of appointment letter" >
-                                </p:calendar>
-
-                                <p:outputLabel value="Confirmation date :" for="dateOfPermanentLetter" />
-                                <p:calendar pattern="dd MMMM yyyy" navigator="true" pattern="dd MMMM yyyy"
-                                            id="dateOfPermanentLetter" value="#{employeeController.selected.dateOfPermanentLetter}" title="Confirmation date " >
-                                </p:calendar>
-
-
-
-
-
-
-
-
-
-
-                                <p:outputLabel value="Date of Birth:" for="dateOfBirth" />
+                                
+                                <p:outputLabel value="05 Date of Birth:" for="dateOfBirth" />
                                 <p:calendar
                                     yearRange="c-60:c-16"
                                     navigator="true" id="dateOfBirth" pattern="dd MM yyyy" value="#{employeeController.selected.dateOfBirth}" title="DateOfBirth"  >
                                 </p:calendar>
 
+                                 <p:outputLabel value="06 Phone No" ></p:outputLabel>
+                                <hr/>
 
-                                <p:outputLabel value="Salary Code:" for="sc" />
-                                <p:inputText id="sc" value="#{employeeController.selected.salaryCode}" title="Salary Code" />
-
-                                <p:outputLabel value="Employee No." for="en" />
-                                <p:inputText id="en" value="#{employeeController.selected.empNumber}" title="Employee Number" />
+                                <p:outputLabel value="Private Phone No.:" for="telephoneNoMobile" />
+                                <p:inputText id="telephoneNoMobile" value="#{employeeController.selected.contactNumber}" title="Personal Telephone Number" />
 
 
-                                <p:outputLabel value="Category:" for="cat" />
-                                <p:selectOneButton id="cat" value="#{employeeController.selected.employeeType}"  label="Category" >
-                                    <f:selectItems value="#{enumController.employeeTypes}" ></f:selectItems>
-                                </p:selectOneButton>
-
-                                <p:outputLabel value="Contact No.:" for="telephoneNoMobile" />
-                                <p:inputText id="telephoneNoMobile" value="#{employeeController.selected.contactNumber }" title="TelephoneNoMobile" />
-
-                                <p:outputLabel value="Address:" for="address" />
-                                <p:inputTextarea rows="4" cols="30" id="address" value="#{employeeController.selected.address}" title="Address" />
+                                <p:outputLabel value="Official Phone No.:" for="otelephoneNoMobile" />
+                                <p:inputText id="otelephoneNoMobile" value="#{employeeController.selected.officialContactNumber}" title="Official Telephone Number" />
 
 
 
-                                <p:outputLabel value="DateOfTransferToCurrentStation:" for="dateOfTransferToCurrentStation" />
-                                <p:calendar id="dateOfTransferToCurrentStation" pattern="dd MMMM yyyy"
-                                            value="#{employeeController.selected.dateOfTransferToCurrentStation}" title="DateOfTransferToCurrentStation" >
+
+                                <p:outputLabel value="07 Date of First Appointment:" for="dateOfFirstAppointment" />
+                                <p:calendar pattern="dd MMMM yyyy" navigator="true" id="dateOfFirstAppointment" value="#{employeeController.selected.dateOfFirstAppointment}" title="DateOfFirstAppointment" >
+                                </p:calendar>
+                                
+                                 <p:outputLabel value="08 Date of Work Assumption:" for="dateOfWorkAssumption" />
+                                <p:calendar pattern="dd MMMM yyyy" navigator="true" id="dateOfWorkAssumption" value="#{employeeController.selected.dateOfFirstAppointment}" title="DateOfFirstAppointment" >
                                 </p:calendar>
 
-
-
-
-
+                                 
+                                 
+                                 
+                                 
+                                 
+                                <p:outputLabel value="Date of Permanent Letter:" for="dateOfPermanentLetter" />
+                                <p:calendar pattern="dd MMMM yyyy" navigator="true"  id="dateOfPermanentLetter" value="#{employeeController.selected.dateOfPermanentLetter}" title="DateOfPermanentLetter" >
+                                </p:calendar>
 
                                 <p:outputLabel value="Number of Permanent Letter:" for="numberOfPermanentLetter" />
                                 <p:inputText id="numberOfPermanentLetter" value="#{employeeController.selected.numberOfPermanentLetter}" title="NumberOfPermanentLetter" />

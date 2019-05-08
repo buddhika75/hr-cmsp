@@ -12,6 +12,7 @@ import javax.inject.Named;
 import com.sss.wc.enums.Gender;
 import com.sss.wc.enums.ItemType;
 import com.sss.wc.enums.LeaveType;
+import com.sss.wc.enums.PositionType;
 import com.sss.wc.enums.Privilege;
 
 /**
@@ -34,6 +35,10 @@ public class EnumController {
 
     public ItemType[] getItemTypes() {
         return ItemType.values();
+    }
+    
+    public PositionType[] getPositionTypes() {
+        return PositionType.values();
     }
 
     public LeaveType[] getLeaveTypes() {

@@ -20,6 +20,13 @@
                                          title="#{bundle1.CreateItemTitle_itemCategory}" >
                             <f:selectItems value="#{enumController.itemTypes}" ></f:selectItems>
                         </p:selectOneMenu>
+                        <p:outputLabel value="Position Type" for="positionType" />
+                        <p:selectOneMenu id="positionType" 
+                                         value="#{itemController.selected.positionType}" 
+                                         title="Position Type" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.positionTypes}" ></f:selectItems>
+                        </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{itemController.create}" value="#{bundle1.Save}" update="display,:ItemListForm:datalist,:growl" oncomplete="handleSubmit(args,'ItemCreateDialog');"/>
                     <p:commandButton value="#{bundle1.Cancel}" onclick="ItemCreateDialog.hide()"/>

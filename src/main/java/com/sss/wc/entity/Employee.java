@@ -49,7 +49,10 @@ public class Employee implements Serializable {
     String Age;
     @Lob
     String address;
+     @Lob
+    private String officialAddress;
     String contactNumber;
+    private String officialContactNumber;
     private String nic;
     private Long salaryCode;
     Long empNumber;
@@ -64,6 +67,9 @@ public class Employee implements Serializable {
 
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dateOfFirstAppointment;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dateOfWorkAssumption;
     private String letterOfFirstAppointment;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date letterDateOfFirstAppointment;
@@ -533,4 +539,30 @@ public class Employee implements Serializable {
         this.letterDateOfFirstAppointment = letterDateOfFirstAppointment;
     }
 
+    public String getOfficialAddress() {
+        return officialAddress;
+    }
+
+    public void setOfficialAddress(String officialAddress) {
+        this.officialAddress = officialAddress;
+    }
+
+    public String getOfficialContactNumber() {
+        return officialContactNumber;
+    }
+
+    public void setOfficialContactNumber(String officialContactNumber) {
+        this.officialContactNumber = officialContactNumber;
+    }
+
+    public Date getDateOfWorkAssumption() {
+        return dateOfWorkAssumption;
+    }
+
+    public void setDateOfWorkAssumption(Date dateOfWorkAssumption) {
+        this.dateOfWorkAssumption = dateOfWorkAssumption;
+    }
+
+    
+    
 }

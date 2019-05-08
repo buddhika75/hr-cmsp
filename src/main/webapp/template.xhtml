@@ -21,44 +21,61 @@
 
             <p:growl id="growl" life="3000" autoUpdate="true" />
 
-            <p:layoutUnit position="north" header="HR Database" >
+            <p:layoutUnit position="north" >
+                <h:panelGroup  >
+                    <table style="width: 100%; background-color: appworkspace;" >
+                        <tr>
+                            <td style="text-align: center;">
+                                <p:graphicImage rendered="#{webUserController.loggedUser eq null}" library="images" name="header1.jpg" style="width: 100%; height: 160px;" ></p:graphicImage>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <h:form id="menuForm"  rendered="#{webUserController.loggedUser ne null}" >
+                                    <p:menubar>
+                                        <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
+                                        <p:submenu label="Employee" >
+                                            <p:menuitem value="Add Development Officer" action="#{employeeController.toAddNewEmployee()}" ajax="false" />
+                                            <p:menuitem value="Add Management Assistant" action="#{employeeController.toAddNewEmployee()}" ajax="false" />
+                                            <p:menuitem value="Manage Employees" action="/employee/List" ajax="false" />
+                                            <p:menuitem value="Upload Employees from Payroll" action="/employee/upload" ajax="false" />
+                                        </p:submenu>
+                                        <p:submenu label="Leave" >
+                                            <p:menuitem value="Add Leave" action="#{employeeLeaveController.toAddNewEmployeeLeave()}" ajax="false" />
+                                        </p:submenu>
+                                        <p:submenu label="Reports" >
+                                            <p:menuitem value="Individual Leave Details" action="#{employeeLeaveController.toSearchEmployeeLeave()}" ajax="false" />
+                                            <p:menuitem value="Individual Summery" action="/employeeLeave/report_single_employee_leave_summery" ajax="false" />
+                                            <p:menuitem value="All Employee Summery" action="/employeeLeave/report_all_employee_leave_summery" ajax="false" />
+                                            <p:menuitem value="All Employee Leave Chart" action="/employeeLeave/all_employee_column_chart" ajax="false" />
+                                        </p:submenu>
+
+                                        <p:submenu label="Users" >
+                                            <p:menuitem value="Change Password" action="/mail/suggestions" ajax="false" />
+                                        </p:submenu>
+
+                                        <p:submenu label="#{bundle.Maintenance}" rendered="#{webUserController.canManage_Institutions or webUserController.canManage_Departments or webUserController.canManage_Items or webUserController.canManage_User}">
+                                            <p:menuitem value="Institute" outcome="/institute/List.xhtml"  disabled ="#{!webUserController.canManage_Institutions}"/>
+                                            <p:menuitem value="Department" outcome="/department/List.xhtml"  disabled ="#{!webUserController.canManage_Departments}"/>
+                                            <p:menuitem value="Item" outcome="/item/List.xhtml"  disabled ="#{!webUserController.canManage_Items}"/>
+                                            <p:menuitem value="Users" outcome="/webUser/index.xhtml"  disabled ="#{!webUserController.canManage_User}"/>
+                                            <p:menuitem value="Data Administration" outcome="/data_admin.xhtml"  disabled ="#{!webUserController.canManage_User}"/>
+
+                                        </p:submenu>
 
 
-                <h:form id="menuForm"  rendered="#{webUserController.loggedUser ne null}" >
-                    <p:menubar>
-                        <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
-                        <p:submenu label="Employee" >
-                            <p:menuitem value="Add Employee" action="#{employeeController.toAddNewEmployee()}" ajax="false" />
-                            <p:menuitem value="Manage Employees" action="/employee/List" ajax="false" />
-                            <p:menuitem value="Upload Employees from Payroll" action="/employee/upload" ajax="false" />
-                        </p:submenu>
-                        <p:submenu label="Leave" >
-                            <p:menuitem value="Add Leave" action="#{employeeLeaveController.toAddNewEmployeeLeave()}" ajax="false" />
-                        </p:submenu>
-                        <p:submenu label="Reports" >
-                            <p:menuitem value="Individual Leave Details" action="#{employeeLeaveController.toSearchEmployeeLeave()}" ajax="false" />
-                            <p:menuitem value="Individual Summery" action="/employeeLeave/report_single_employee_leave_summery" ajax="false" />
-                            <p:menuitem value="All Employee Summery" action="/employeeLeave/report_all_employee_leave_summery" ajax="false" />
-                            <p:menuitem value="All Employee Leave Chart" action="/employeeLeave/all_employee_column_chart" ajax="false" />
-                        </p:submenu>
 
-                        <p:submenu label="Users" >
-                            <p:menuitem value="Change Password" action="/mail/suggestions" ajax="false" />
-                        </p:submenu>
 
-                        <p:submenu label="#{bundle.Maintenance}" rendered="#{webUserController.canManage_Institutions or webUserController.canManage_Departments or webUserController.canManage_Items or webUserController.canManage_User}">
-                            <p:menuitem value="Institute" outcome="/institute/List.xhtml"  disabled ="#{!webUserController.canManage_Institutions}"/>
-                            <p:menuitem value="Department" outcome="/department/List.xhtml"  disabled ="#{!webUserController.canManage_Departments}"/>
-                            <p:menuitem value="Users" outcome="/webUser/index.xhtml"  disabled ="#{!webUserController.canManage_User}"/>
-                            <p:menuitem value="Data Administration" outcome="/data_admin.xhtml"  disabled ="#{!webUserController.canManage_User}"/>
+                                    </p:menubar>
+                                </h:form>
+                            </td>
+                        </tr>
+                    </table>
 
-                        </p:submenu>
+                </h:panelGroup>
 
 
 
-
-                    </p:menubar>
-                </h:form>
 
 
             </p:layoutUnit>
@@ -66,7 +83,7 @@
             <p:layoutUnit position="south" >
                 <ui:insert name="footer">
                     <h:panelGrid columns="4" >
-                        <p:outputLabel value="&copy; Sunila Software Solutions" ></p:outputLabel>
+                        <p:outputLabel value="&copy; PDHS, SP" ></p:outputLabel>
                         <h:panelGroup >
                             <p:spacer ></p:spacer>
                             |

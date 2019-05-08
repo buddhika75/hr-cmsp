@@ -6,6 +6,7 @@
 package com.sss.wc.entity;
 
 import com.sss.wc.enums.ItemType;
+import com.sss.wc.enums.PositionType;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -20,6 +21,7 @@ import javax.persistence.Id;
  */
 @Entity
 public class Item implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,7 +32,12 @@ public class Item implements Serializable {
     String tname;
     @Enumerated(EnumType.STRING)
     ItemType itemCategory;
+    @Enumerated(EnumType.STRING)
+    private PositionType positionType;
 
+    
+    
+    
     public String getName() {
         return name;
     }
@@ -62,9 +69,7 @@ public class Item implements Serializable {
     public void setItemCategory(ItemType itemCategory) {
         this.itemCategory = itemCategory;
     }
-    
-    
-    
+
     public Long getId() {
         return id;
     }
@@ -97,5 +102,13 @@ public class Item implements Serializable {
     public String toString() {
         return "lk.gov.sp.healthdept.td.entity.Item[ id=" + id + " ]";
     }
-    
+
+    public PositionType getPositionType() {
+        return positionType;
+    }
+
+    public void setPositionType(PositionType positionType) {
+        this.positionType = positionType;
+    }
+
 }

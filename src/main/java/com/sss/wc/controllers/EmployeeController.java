@@ -74,6 +74,15 @@ public class EmployeeController implements Serializable {
     }
     
   
+    public String toAddNewDevelopmentOfficer() {
+        selected = new Employee();
+        selected.setDateOfTransferToCurrentStation(new Date());
+        if (getWebUserController().getLoggedUser() != null) {
+            selected.setRegisteredInstitute(getWebUserController().getLoggedUser().getInstitute());
+            selected.setRegisteredDepartment(getWebUserController().getLoggedUser().getDepartment());
+        }
+        return "/employee/employee";
+    }
     
     public String toAddNewEmployee() {
         selected = new Employee();
