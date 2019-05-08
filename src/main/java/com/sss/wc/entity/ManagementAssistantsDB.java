@@ -19,9 +19,8 @@ import javax.persistence.Temporal;
  *
  * @author Pathum
  */
-@Entity
-public class DevelopmentOfficerDB implements Serializable {
 
+public class ManagementAssistantsDB implements Serializable{
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,62 +40,73 @@ public class DevelopmentOfficerDB implements Serializable {
     Date dateOfBirth;
     String personalContactNumber;
     String officialContactNumber;
-
+    
     @Temporal(javax.persistence.TemporalType.DATE)
-    Date dateOfAppointment;
+    Date dateOfFirstAppointment;
+     String designation ;
+     
+     @Temporal(javax.persistence.TemporalType.DATE)
+     Date dateOfDutyAssumed;
+     
+     private Boolean absorptionToServiceMinute2004
     @Temporal(javax.persistence.TemporalType.DATE)
-    Date dateOfDutyAssumed;
-
-    private Boolean absorptionToServiceMinute;
+    Date dateOfAbsorption2004;
+    
+    private Boolean absorptionToServiceMinute2013;
     @Temporal(javax.persistence.TemporalType.DATE)
-    Date dateOfAbsorption;
-
+    Date dateOfAbsorption2013;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dateOfCompletionOfEfficiencyBarExaminationGrade3;
-
+    
     private Boolean serviceConfirmation;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date confirmed;
-     String numberOfConfirmedLetter;
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dateOfConfirmedLetter;
-   
-
+    String numberOfConfirmedLetter;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date completionOfSecondLanguageProficiency;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dateOfGrade2Promotion;
-    String numberOfGrade2PromotionLetter;
+     String numberOfGrade2PromotionLetter;
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dateOfGrade2PromotionLetter;
     
-
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date ExaminationGrade2;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dateOfGrade1Promotion;
-      String numberOfGrade1PromotionLetter;
+     
+    String numberOfGrade1PromotionLetter;
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dateOfGrade1PromotionLetter;
-  
+   
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date ExaminationGrade1;
+    
+     @Temporal(javax.persistence.TemporalType.DATE)
+    Date dateOfGradeofSpecialPromotion;
+    String numberOfGradeofSpecialPromotion;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    Date dateOfGrade1SpecialPromotionLetter;
+    
     private Boolean firstAppointmentIsOutOfSouthernProvince;
+    private Boolean diciplinaryAction;
+    String numberOfDiciplinaryActionLetter;
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date publicServiceOfSouthernProvince;
-
-    private Boolean actionsHasTaken;
-    String numberOfDisciplinaryLetter;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dateOfDisciplinaryLetter;
-
+    private Date dateOfDisciplinaryActionLetter;
+    
     private Boolean transferred;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateOfTransfer;
     String numberOfTransferLetter;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateOfTransferLetter;
-
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateOfRetirement;
     String numberOfRetirementLetter;
