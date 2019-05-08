@@ -63,7 +63,7 @@ public class DevelopmentOfficerDB implements Serializable {
     String numberOfGrade2PromotionLetter;
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date ExaminationGrade2 ;
+    private Date ExaminationGrade2   ;
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dateOfGrade1Promotion ;
     @Temporal(javax.persistence.TemporalType.DATE)
