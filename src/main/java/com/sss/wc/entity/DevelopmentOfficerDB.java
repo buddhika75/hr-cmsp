@@ -30,7 +30,7 @@ public class DevelopmentOfficerDB implements Serializable {
     @Lob
     String fullname;
 
-    String namewithInitials;
+    String nameWithInitials;
     private String nic;
 
     @Lob

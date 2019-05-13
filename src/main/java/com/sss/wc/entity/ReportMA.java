@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class ReportMA {
     
-    private String NIC;
+    private String nic;
     private String officerName;
     private int noOfPublicManagementAssistantsInSP;
     private List<String> namesOfPublicManagementAssistantsWorksInSP;
