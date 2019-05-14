@@ -3,7 +3,9 @@ package com.sss.wc.controllers;
 import com.sss.wc.entity.EmployeeLeave;
 import com.sss.wc.controllers.util.JsfUtil;
 import com.sss.wc.controllers.util.JsfUtil.PersistAction;
+import com.sss.wc.entity.DevelopmentOfficer;
 import com.sss.wc.entity.Employee;
+import com.sss.wc.entity.ManagementAssistant;
 import com.sss.wc.enums.LeaveSummery;
 import com.sss.wc.facades.EmployeeLeaveFacade;
 
@@ -52,9 +54,37 @@ public class EmployeeLeaveController implements Serializable {
     private Date fromDate;
     private Date toDate;
 
+    DevelopmentOfficer developmentOfficer;
+    ManagementAssistant managementAssistant;
+    
     private LineChartModel lineModel1;
     private LineChartModel lineModel2;
     private BarChartModel barModel;
+
+    public DevelopmentOfficer getDevelopmentOfficer() {
+        if(developmentOfficer==null){
+            developmentOfficer = new DevelopmentOfficer();
+        }
+        return developmentOfficer;
+    }
+
+    public void setDevelopmentOfficer(DevelopmentOfficer developmentOfficer) {
+        this.developmentOfficer = developmentOfficer;
+    }
+
+    public ManagementAssistant getManagementAssistant() {
+        if(managementAssistant==null){
+            managementAssistant = new ManagementAssistant();
+        }
+        return managementAssistant;
+    }
+
+    public void setManagementAssistant(ManagementAssistant managementAssistant) {
+        this.managementAssistant = managementAssistant;
+    }
+    
+    
+    
 
     private BarChartModel initBarModel(List<LeaveSummery> lss) {
         BarChartModel model = new BarChartModel();

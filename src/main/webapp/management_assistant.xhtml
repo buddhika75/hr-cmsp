@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="title">
+                Development Officer
+            </ui:define>
+
+            
+
+            <ui:define name="body">
+                
+                <f:view>
+
+
+                    <h:form>
+                        <h1><h:outputText value="Create/Edit"/></h1>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Fullname:" for="fullname" />
+                            <h:inputTextarea rows="4" cols="30" id="fullname" value="#{employeeLeaveController.developmentOfficer.fullname}" title="Fullname" />
+                            <h:outputLabel value="NamewithInitials:" for="namewithInitials" />
+                            <h:inputText id="namewithInitials" value="#{employeeLeaveController.developmentOfficer.namewithInitials}" title="NamewithInitials" />
+                            <h:outputLabel value="Nic:" for="nic" />
+                            <h:inputText id="nic" value="#{employeeLeaveController.developmentOfficer.nic}" title="Nic" />
+                            <h:outputLabel value="Address:" for="address" />
+                            <h:inputTextarea rows="4" cols="30" id="address" value="#{employeeLeaveController.developmentOfficer.address}" title="Address" />
+                            <h:outputLabel value="Institution:" for="institution" />
+                            <h:selectOneMenu id="institution" value="#{employeeLeaveController.developmentOfficer.institution}" title="Institution" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="DateOfBirth:" for="dateOfBirth" />
+                            <h:inputText id="dateOfBirth" value="#{employeeLeaveController.developmentOfficer.dateOfBirth}" title="DateOfBirth" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="PersonalContactNumber:" for="personalContactNumber" />
+                            <h:inputText id="personalContactNumber" value="#{employeeLeaveController.developmentOfficer.personalContactNumber}" title="PersonalContactNumber" />
+                            <h:outputLabel value="OfficialContactNumber:" for="officialContactNumber" />
+                            <h:inputText id="officialContactNumber" value="#{employeeLeaveController.developmentOfficer.officialContactNumber}" title="OfficialContactNumber" />
+                            <h:outputLabel value="DateOfAppointment:" for="dateOfAppointment" />
+                            <h:inputText id="dateOfAppointment" value="#{employeeLeaveController.developmentOfficer.dateOfAppointment}" title="DateOfAppointment" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateOfDutyAssumed:" for="dateOfDutyAssumed" />
+                            <h:inputText id="dateOfDutyAssumed" value="#{employeeLeaveController.developmentOfficer.dateOfDutyAssumed}" title="DateOfDutyAssumed" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="AbsorptionToServiceMinute:" for="absorptionToServiceMinute" />
+                            <h:inputText id="absorptionToServiceMinute" value="#{employeeLeaveController.developmentOfficer.absorptionToServiceMinute}" title="AbsorptionToServiceMinute" />
+                            <h:outputLabel value="DateOfAbsorption:" for="dateOfAbsorption" />
+                            <h:inputText id="dateOfAbsorption" value="#{employeeLeaveController.developmentOfficer.dateOfAbsorption}" title="DateOfAbsorption" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateOfCompletionOfEfficiencyBarExaminationGrade3:" for="dateOfCompletionOfEfficiencyBarExaminationGrade3" />
+                            <h:inputText id="dateOfCompletionOfEfficiencyBarExaminationGrade3" value="#{employeeLeaveController.developmentOfficer.dateOfCompletionOfEfficiencyBarExaminationGrade3}" title="DateOfCompletionOfEfficiencyBarExaminationGrade3" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="ServiceConfirmation:" for="serviceConfirmation" />
+                            <h:inputText id="serviceConfirmation" value="#{employeeLeaveController.developmentOfficer.serviceConfirmation}" title="ServiceConfirmation" />
+                            <h:outputLabel value="Confirmed:" for="confirmed" />
+                            <h:inputText id="confirmed" value="#{employeeLeaveController.developmentOfficer.confirmed}" title="Confirmed" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="NumberOfConfirmedLetter:" for="numberOfConfirmedLetter" />
+                            <h:inputText id="numberOfConfirmedLetter" value="#{employeeLeaveController.developmentOfficer.numberOfConfirmedLetter}" title="NumberOfConfirmedLetter" />
+                            <h:outputLabel value="DateOfConfirmedLetter:" for="dateOfConfirmedLetter" />
+                            <h:inputText id="dateOfConfirmedLetter" value="#{employeeLeaveController.developmentOfficer.dateOfConfirmedLetter}" title="DateOfConfirmedLetter" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="CompletionOfSecondLanguageProficiency:" for="completionOfSecondLanguageProficiency" />
+                            <h:inputText id="completionOfSecondLanguageProficiency" value="#{employeeLeaveController.developmentOfficer.completionOfSecondLanguageProficiency}" title="CompletionOfSecondLanguageProficiency" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateOfGrade2Promotion:" for="dateOfGrade2Promotion" />
+                            <h:inputText id="dateOfGrade2Promotion" value="#{employeeLeaveController.developmentOfficer.dateOfGrade2Promotion}" title="DateOfGrade2Promotion" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="NumberOfGrade2PromotionLetter:" for="numberOfGrade2PromotionLetter" />
+                            <h:inputText id="numberOfGrade2PromotionLetter" value="#{employeeLeaveController.developmentOfficer.numberOfGrade2PromotionLetter}" title="NumberOfGrade2PromotionLetter" />
+                            <h:outputLabel value="DateOfGrade2PromotionLetter:" for="dateOfGrade2PromotionLetter" />
+                            <h:inputText id="dateOfGrade2PromotionLetter" value="#{employeeLeaveController.developmentOfficer.dateOfGrade2PromotionLetter}" title="DateOfGrade2PromotionLetter" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="ExaminationGrade2:" for="examinationGrade2" />
+                            <h:inputText id="examinationGrade2" value="#{employeeLeaveController.developmentOfficer.examinationGrade2}" title="ExaminationGrade2" />
+                            <h:outputLabel value="DateOfGrade1Promotion:" for="dateOfGrade1Promotion" />
+                            <h:inputText id="dateOfGrade1Promotion" value="#{employeeLeaveController.developmentOfficer.dateOfGrade1Promotion}" title="DateOfGrade1Promotion" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="NumberOfGrade1PromotionLetter:" for="numberOfGrade1PromotionLetter" />
+                            <h:inputText id="numberOfGrade1PromotionLetter" value="#{employeeLeaveController.developmentOfficer.numberOfGrade1PromotionLetter}" title="NumberOfGrade1PromotionLetter" />
+                            <h:outputLabel value="DateOfGrade1PromotionLetter:" for="dateOfGrade1PromotionLetter" />
+                            <h:inputText id="dateOfGrade1PromotionLetter" value="#{employeeLeaveController.developmentOfficer.dateOfGrade1PromotionLetter}" title="DateOfGrade1PromotionLetter" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="ExaminationGrade1:" for="examinationGrade1" />
+                            <h:inputText id="examinationGrade1" value="#{employeeLeaveController.developmentOfficer.examinationGrade1}" title="ExaminationGrade1" />
+                            <h:outputLabel value="FirstAppointmentIsOutOfSouthernProvince:" for="firstAppointmentIsOutOfSouthernProvince" />
+                            <h:inputText id="firstAppointmentIsOutOfSouthernProvince" value="#{employeeLeaveController.developmentOfficer.firstAppointmentIsOutOfSouthernProvince}" title="FirstAppointmentIsOutOfSouthernProvince" />
+                            <h:outputLabel value="PublicServiceOfSouthernProvince:" for="publicServiceOfSouthernProvince" />
+                            <h:inputText id="publicServiceOfSouthernProvince" value="#{employeeLeaveController.developmentOfficer.publicServiceOfSouthernProvince}" title="PublicServiceOfSouthernProvince" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="ActionsHasTaken:" for="actionsHasTaken" />
+                            <h:inputText id="actionsHasTaken" value="#{employeeLeaveController.developmentOfficer.actionsHasTaken}" title="ActionsHasTaken" />
+                            <h:outputLabel value="NumberOfDisciplinaryLetter:" for="numberOfDisciplinaryLetter" />
+                            <h:inputText id="numberOfDisciplinaryLetter" value="#{employeeLeaveController.developmentOfficer.numberOfDisciplinaryLetter}" title="NumberOfDisciplinaryLetter" />
+                            <h:outputLabel value="DateOfDisciplinaryLetter:" for="dateOfDisciplinaryLetter" />
+                            <h:inputText id="dateOfDisciplinaryLetter" value="#{employeeLeaveController.developmentOfficer.dateOfDisciplinaryLetter}" title="DateOfDisciplinaryLetter" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="Transferred:" for="transferred" />
+                            <h:inputText id="transferred" value="#{employeeLeaveController.developmentOfficer.transferred}" title="Transferred" />
+                            <h:outputLabel value="DateOfTransfer:" for="dateOfTransfer" />
+                            <h:inputText id="dateOfTransfer" value="#{employeeLeaveController.developmentOfficer.dateOfTransfer}" title="DateOfTransfer" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="NumberOfTransferLetter:" for="numberOfTransferLetter" />
+                            <h:inputText id="numberOfTransferLetter" value="#{employeeLeaveController.developmentOfficer.numberOfTransferLetter}" title="NumberOfTransferLetter" />
+                            <h:outputLabel value="DateOfTransferLetter:" for="dateOfTransferLetter" />
+                            <h:inputText id="dateOfTransferLetter" value="#{employeeLeaveController.developmentOfficer.dateOfTransferLetter}" title="DateOfTransferLetter" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateOfRetirement:" for="dateOfRetirement" />
+                            <h:inputText id="dateOfRetirement" value="#{employeeLeaveController.developmentOfficer.dateOfRetirement}" title="DateOfRetirement" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="NumberOfRetirementLetter:" for="numberOfRetirementLetter" />
+                            <h:inputText id="numberOfRetirementLetter" value="#{employeeLeaveController.developmentOfficer.numberOfRetirementLetter}" title="NumberOfRetirementLetter" />
+                            <h:outputLabel value="DateOfRetirementLetter:" for="dateOfRetirementLetter" />
+                            <h:inputText id="dateOfRetirementLetter" value="#{employeeLeaveController.developmentOfficer.dateOfRetirementLetter}" title="DateOfRetirementLetter" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="Id:" for="id" />
+                            <h:inputText id="id" value="#{employeeLeaveController.developmentOfficer.id}" title="Id" />
+                            <h:outputLabel value="DateOfTransferToCurrentStation:" for="dateOfTransferToCurrentStation" />
+                            <h:inputText id="dateOfTransferToCurrentStation" value="#{employeeLeaveController.developmentOfficer.dateOfTransferToCurrentStation}" title="DateOfTransferToCurrentStation" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="ReferenceNumber:" for="referenceNumber" />
+                            <h:inputText id="referenceNumber" value="#{employeeLeaveController.developmentOfficer.referenceNumber}" title="ReferenceNumber" />
+                            <h:outputLabel value="NameOfEmployee:" for="nameOfEmployee" />
+                            <h:inputText id="nameOfEmployee" value="#{employeeLeaveController.developmentOfficer.nameOfEmployee}" title="NameOfEmployee" />
+                            <h:outputLabel value="RegisteredInstitute:" for="registeredInstitute" />
+                            <h:selectOneMenu id="registeredInstitute" value="#{employeeLeaveController.developmentOfficer.registeredInstitute}" title="RegisteredInstitute" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="RegisteredDepartment:" for="registeredDepartment" />
+                            <h:selectOneMenu id="registeredDepartment" value="#{employeeLeaveController.developmentOfficer.registeredDepartment}" title="RegisteredDepartment" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="DateOfBirth:" for="dateOfBirth" />
+                            <h:inputText id="dateOfBirth" value="#{employeeLeaveController.developmentOfficer.dateOfBirth}" title="DateOfBirth" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="Gender:" for="gender" />
+                            <h:inputText id="gender" value="#{employeeLeaveController.developmentOfficer.gender}" title="Gender" />
+                            <h:outputLabel value="Age:" for="age" />
+                            <h:inputText id="age" value="#{employeeLeaveController.developmentOfficer.age}" title="Age" />
+                            <h:outputLabel value="Address:" for="address" />
+                            <h:inputTextarea rows="4" cols="30" id="address" value="#{employeeLeaveController.developmentOfficer.address}" title="Address" />
+                            <h:outputLabel value="ContactNumber:" for="contactNumber" />
+                            <h:inputText id="contactNumber" value="#{employeeLeaveController.developmentOfficer.contactNumber}" title="ContactNumber" />
+                            <h:outputLabel value="Designation:" for="designation" />
+                            <h:selectOneMenu id="designation" value="#{employeeLeaveController.developmentOfficer.designation}" title="Designation" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="FullName:" for="fullName" />
+                            <h:inputTextarea rows="4" cols="30" id="fullName" value="#{employeeLeaveController.developmentOfficer.fullName}" title="FullName" />
+                            <h:outputLabel value="DateOfFirstAppointment:" for="dateOfFirstAppointment" />
+                            <h:inputText id="dateOfFirstAppointment" value="#{employeeLeaveController.developmentOfficer.dateOfFirstAppointment}" title="DateOfFirstAppointment" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateOfPermanentLetter:" for="dateOfPermanentLetter" />
+                            <h:inputText id="dateOfPermanentLetter" value="#{employeeLeaveController.developmentOfficer.dateOfPermanentLetter}" title="DateOfPermanentLetter" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="NumberOfPermanentLetter:" for="numberOfPermanentLetter" />
+                            <h:inputText id="numberOfPermanentLetter" value="#{employeeLeaveController.developmentOfficer.numberOfPermanentLetter}" title="NumberOfPermanentLetter" />
+                            <h:outputLabel value="DateOfCurrentDesignation:" for="dateOfCurrentDesignation" />
+                            <h:inputText id="dateOfCurrentDesignation" value="#{employeeLeaveController.developmentOfficer.dateOfCurrentDesignation}" title="DateOfCurrentDesignation" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateForGradeTwo:" for="dateForGradeTwo" />
+                            <h:inputText id="dateForGradeTwo" value="#{employeeLeaveController.developmentOfficer.dateForGradeTwo}" title="DateForGradeTwo" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DeteOfGradeOne:" for="deteOfGradeOne" />
+                            <h:inputText id="deteOfGradeOne" value="#{employeeLeaveController.developmentOfficer.deteOfGradeOne}" title="DeteOfGradeOne" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateOfSpecialGrade:" for="dateOfSpecialGrade" />
+                            <h:inputText id="dateOfSpecialGrade" value="#{employeeLeaveController.developmentOfficer.dateOfSpecialGrade}" title="DateOfSpecialGrade" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateOfSuperGrade:" for="dateOfSuperGrade" />
+                            <h:inputText id="dateOfSuperGrade" value="#{employeeLeaveController.developmentOfficer.dateOfSuperGrade}" title="DateOfSuperGrade" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateOfCurrentStation:" for="dateOfCurrentStation" />
+                            <h:inputText id="dateOfCurrentStation" value="#{employeeLeaveController.developmentOfficer.dateOfCurrentStation}" title="DateOfCurrentStation" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DateOfTransferFromCurrentStation:" for="dateOfTransferFromCurrentStation" />
+                            <h:inputText id="dateOfTransferFromCurrentStation" value="#{employeeLeaveController.developmentOfficer.dateOfTransferFromCurrentStation}" title="DateOfTransferFromCurrentStation" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="Civilstatus:" for="civilstatus" />
+                            <h:inputText id="civilstatus" value="#{employeeLeaveController.developmentOfficer.civilstatus}" title="Civilstatus" />
+                            <h:outputLabel value="NoChi:" for="noChi" />
+                            <h:inputText id="noChi" value="#{employeeLeaveController.developmentOfficer.noChi}" title="NoChi" />
+                            <h:outputLabel value="DobOfChild1:" for="dobOfChild1" />
+                            <h:inputText id="dobOfChild1" value="#{employeeLeaveController.developmentOfficer.dobOfChild1}" title="DobOfChild1" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DobOfChild2:" for="dobOfChild2" />
+                            <h:inputText id="dobOfChild2" value="#{employeeLeaveController.developmentOfficer.dobOfChild2}" title="DobOfChild2" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DobOfChild3:" for="dobOfChild3" />
+                            <h:inputText id="dobOfChild3" value="#{employeeLeaveController.developmentOfficer.dobOfChild3}" title="DobOfChild3" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DobOfChild4:" for="dobOfChild4" />
+                            <h:inputText id="dobOfChild4" value="#{employeeLeaveController.developmentOfficer.dobOfChild4}" title="DobOfChild4" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DobOfChild5:" for="dobOfChild5" />
+                            <h:inputText id="dobOfChild5" value="#{employeeLeaveController.developmentOfficer.dobOfChild5}" title="DobOfChild5" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DobOfChild6:" for="dobOfChild6" />
+                            <h:inputText id="dobOfChild6" value="#{employeeLeaveController.developmentOfficer.dobOfChild6}" title="DobOfChild6" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DobOfChild7:" for="dobOfChild7" />
+                            <h:inputText id="dobOfChild7" value="#{employeeLeaveController.developmentOfficer.dobOfChild7}" title="DobOfChild7" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DobOfChild8:" for="dobOfChild8" />
+                            <h:inputText id="dobOfChild8" value="#{employeeLeaveController.developmentOfficer.dobOfChild8}" title="DobOfChild8" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DobOfChild9:" for="dobOfChild9" />
+                            <h:inputText id="dobOfChild9" value="#{employeeLeaveController.developmentOfficer.dobOfChild9}" title="DobOfChild9" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="DobOfChild10:" for="dobOfChild10" />
+                            <h:inputText id="dobOfChild10" value="#{employeeLeaveController.developmentOfficer.dobOfChild10}" title="DobOfChild10" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="Other:" for="other" />
+                            <h:inputTextarea rows="4" cols="30" id="other" value="#{employeeLeaveController.developmentOfficer.other}" title="Other" />
+                            <h:outputLabel value="EmployeeType:" for="employeeType" />
+                            <h:inputText id="employeeType" value="#{employeeLeaveController.developmentOfficer.employeeType}" title="EmployeeType" />
+                            <h:outputLabel value="Nic:" for="nic" />
+                            <h:inputText id="nic" value="#{employeeLeaveController.developmentOfficer.nic}" title="Nic" />
+                            <h:outputLabel value="SalaryCode:" for="salaryCode" />
+                            <h:inputText id="salaryCode" value="#{employeeLeaveController.developmentOfficer.salaryCode}" title="SalaryCode" />
+                            <h:outputLabel value="Active:" for="active" />
+                            <h:inputText id="active" value="#{employeeLeaveController.developmentOfficer.active}" title="Active" />
+                            <h:outputLabel value="ActiveFrom:" for="activeFrom" />
+                            <h:inputText id="activeFrom" value="#{employeeLeaveController.developmentOfficer.activeFrom}" title="ActiveFrom" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="ActiveTo:" for="activeTo" />
+                            <h:inputText id="activeTo" value="#{employeeLeaveController.developmentOfficer.activeTo}" title="ActiveTo" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="EmpNumber:" for="empNumber" />
+                            <h:inputText id="empNumber" value="#{employeeLeaveController.developmentOfficer.empNumber}" title="EmpNumber" />
+                            <h:outputLabel value="Department:" for="department" />
+                            <h:selectOneMenu id="department" value="#{employeeLeaveController.developmentOfficer.department}" title="Department" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="Institute:" for="institute" />
+                            <h:selectOneMenu id="institute" value="#{employeeLeaveController.developmentOfficer.institute}" title="Institute" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="LetterOfFirstAppointment:" for="letterOfFirstAppointment" />
+                            <h:inputText id="letterOfFirstAppointment" value="#{employeeLeaveController.developmentOfficer.letterOfFirstAppointment}" title="LetterOfFirstAppointment" />
+                            <h:outputLabel value="LetterDateOfFirstAppointment:" for="letterDateOfFirstAppointment" />
+                            <h:inputText id="letterDateOfFirstAppointment" value="#{employeeLeaveController.developmentOfficer.letterDateOfFirstAppointment}" title="LetterDateOfFirstAppointment" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="OfficialAddress:" for="officialAddress" />
+                            <h:inputTextarea rows="4" cols="30" id="officialAddress" value="#{employeeLeaveController.developmentOfficer.officialAddress}" title="OfficialAddress" />
+                            <h:outputLabel value="OfficialContactNumber:" for="officialContactNumber" />
+                            <h:inputText id="officialContactNumber" value="#{employeeLeaveController.developmentOfficer.officialContactNumber}" title="OfficialContactNumber" />
+                            <h:outputLabel value="DateOfWorkAssumption:" for="dateOfWorkAssumption" />
+                            <h:inputText id="dateOfWorkAssumption" value="#{employeeLeaveController.developmentOfficer.dateOfWorkAssumption}" title="DateOfWorkAssumption" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
+
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
